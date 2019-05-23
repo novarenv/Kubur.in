@@ -1,0 +1,299 @@
+body {
+    font-family: 'Stolzl', sans-serif !important;
+    background-image: url('../assets/images/bg.jpg');
+}
+
+.btn {
+    border-radius: 0rem;
+    font-size: .85rem;
+    padding: .6rem 1.5rem;
+}
+
+.navbar {
+    z-index: 99;
+    height: 80px;
+    border-bottom: solid 2px #ECEBEB;
+    background-color: #fff;
+}
+
+.navbar-brand {
+    font-family: 'Stolzl-Medium';
+}
+
+.container,
+.container-margin {
+    margin: 0 10px;
+}
+
+.display-45 {
+    font-size: 2.3rem;
+    font-family: 'Stolzl-Medium'
+}
+
+.jumbotron {
+    background: none;
+}
+
+.btn-lg {
+    padding: .8rem 2rem;
+}
+
+.text-sm {
+    font-family: 'Stolzl-Medium';
+    letter-spacing: .1rem;
+    font-size: .9rem;
+}
+
+.card {
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: 0px 0px 25px -14px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 0px 25px -14px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 25px -14px rgba(0, 0, 0, 0.15);
+}
+
+.menu-btn, .change {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 0;
+    margin-right: 12px;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-3px, 3px);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+    opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.card-btn {
+    height: 150px;
+    padding-top: 50px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card-btn.planner .card-btn-img img.btn-img-tomb {
+    max-width: none;
+    content: url('../assets/images/tombstone.png');
+    position: absolute;
+    bottom: -55%;
+    height: 250px;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+}
+
+.card-btn.planner p.card-text {
+    color: #888;
+    font-size: .85rem;
+    opacity: 0;
+    -webkit-transition: opacity 0.2s, -webkit-transform 0.35s;
+    transition: opacity 0.2s, transform 0.35s;
+}
+
+.card-btn.planner h5.card-title {
+    transition: transform 0.35s;
+}
+
+.card-btn.planner h5.card-title,
+.card-btn.planner p.card-text {
+    -webkit-transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 40px, 0);
+}
+
+.card-btn.planner:hover h5.card-title,
+.card-btn.planner:hover p.card-text {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.card-btn:hover p.card-text {
+    opacity: 1;
+}
+
+
+.card-body {
+    position: relative;
+}
+
+.card-title {
+    font-family: 'Stolzl-Medium';
+    margin-bottom: 8px;
+}
+
+
+.btn-img-tomb {
+    content: url('../assets/images/tombstone.png');
+    position: absolute;
+    left: 55%;
+    bottom: -55%;
+    height: 250px;
+}
+
+.btn-img-skulls {
+    content: url('../assets/images/skulls.png');
+    position: absolute;
+    left: 65%;
+    bottom: 0%;
+    height: 150px;
+
+}
+
+@media (min-width: 1200px) {
+    .vertical-center {
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+    }
+}
+
+
+
+.jumbotron {
+    height: calc(100vh - 120px);
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    box-shadow: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 85px;
+}
+
+
+.sidenav a {
+    margin: 0 12px 0 12px;
+    padding: 12px 8px 12px 0px;
+    border-top: solid #eee 1px;
+    text-decoration: none;
+    font-size : 1rem;
+    color: #000;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a.sidenav-top {
+    border-top: none;;
+}
+
+.sidenav a:hover {
+    color: #888;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+.form {
+    position: absolute;
+    z-index: 99;
+    background: #FFFFFF;
+    max-width: 300px;
+    margin: 0 auto 100px;
+    padding: 30px 30px 20px 30px;
+    text-align: center;
+    top: 85px;
+    opacity: 0;
+    transition: .15s;
+  }
+
+  .form.login-visible {
+    opacity: 100;
+  }
+
+@media (min-width: 1200px){
+    .form {
+        right: 3vw;
+    }
+}
+
+@media (min-width: 1900px){
+    .form {
+        right: 3vw;
+    }
+}
+
+  .form input {
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    height: 2rem;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: .8rem;
+  }
+  .form button {
+    text-transform: uppercase;
+    outline: 0;
+    width: 100%;
+    height: 2rem;
+    border: 0;
+    padding: 5px;
+    color: #FFFFFF;
+    font-size: .8rem;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+  
+  .form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+  }
+
+  .form .message a {
+    color: #343a40;
+    text-decoration: none;
+  }
+  .form .register-form {
+    display: none;
+  }

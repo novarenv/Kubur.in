@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Stolzl';
+    src: url('../assets/fonts/StolzlRegular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Stolzl-Light';
+    src: url('../assets/fonts/StolzlLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Stolzl-Medium';
+    src: url('../assets/fonts/StolzlMedium.ttf') format('truetype');
+}
