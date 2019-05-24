@@ -140,6 +140,16 @@ class SiteController extends Controller
      *
      * @return mixed
      */
+    public function actionPlanner()
+    {
+        return $this->render('planner');
+    }
+
+    public function actionServices()
+    {
+        return $this->render('services');
+    }
+
     public function actionAbout()
     {
         return $this->render('about');

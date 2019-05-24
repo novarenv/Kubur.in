@@ -9,6 +9,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 ?>
@@ -37,16 +38,31 @@ AppAsset::register($this);
                 <div class="bar3"></div>
             </div>
         </ul>
-        <a class="navbar-brand mx-auto" href="#">Kubur.in</a>
-        <form class="form-inline">
-            <button class="btn btn-dark" id="btn-login" type="button" onclick="showLogin(this)">Sign In</button>
-        </form>
+        <a class="navbar-brand mx-auto" href="/">Kubur.in</a>
+        <?php
+            if (Yii::$app->user->isGuest) {
+                ?>
+                <div class="form-inline">
+                    <span class="btn btn-dark" id="btn-login" onclick="showLogin(this)">Sign In</span>
+                </div>
+                <?php
+            } else {
+                ?>
+                <div class="form-inline">
+                    <span class="btn btn-dark" id="btn-login" onclick="showLogin(this)">Sign In</span>
+                </div>
+                <?php
+            }
+        ?>
+
+
+        
     </nav>
 
     <div id="mySidenav" class="sidenav">
-        <a href="#" class="sidenav-top">Planner</a>
-        <a href="#">Services</a>
-        <a href="#">About</a>
+        <a href="planner" class="sidenav-top">Planner</a>
+        <a href="services">Services</a>
+        <a href="about">About</a>
     </div>
 
     <?= $content ?>

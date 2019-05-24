@@ -24,7 +24,7 @@ $this->title = 'Kubur.in - Funeral Planner';
                 <div class="col-lg-5">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="card bg-white mb-3 card-btn planner">
+                            <div class="card bg-white mb-3 card-btn planner" onclick="toPlanner()">
                                 <div class="card-btn-img">
                                     <img class="img-fluid btn-img-tomb" alt="Responsive image">
                                 </div>
@@ -37,7 +37,7 @@ $this->title = 'Kubur.in - Funeral Planner';
                     </div>
                     <div class="row">
                         <div class="col-lg-6">
-                            <div class="card bg-white mb-3 card-btn">
+                            <div class="card bg-white mb-3 card-btn" onclick="toServices()">
                                 <div class="card-btn-img">
                                     <img class="img-fluid btn-img-skulls" alt="Responsive image">
                                 </div>

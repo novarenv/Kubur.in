@@ -20,6 +20,14 @@ function showLogin(x){
   document.getElementById("login-form").classList.toggle("login-visible");
 }
 
+function toPlanner(){
+  window.location.href = "planner";
+}
+
+function toServices(){
+  window.location.href = "services";
+}
+
 //jQuery below
 
 $(function() {

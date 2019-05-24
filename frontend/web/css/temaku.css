@@ -52,7 +52,8 @@ body {
     box-shadow: 0px 0px 25px -14px rgba(0, 0, 0, 0.15);
 }
 
-.menu-btn, .change {
+.menu-btn,
+.change {
     display: inline-block;
     cursor: pointer;
     margin-left: 0;
@@ -198,14 +199,15 @@ body {
     padding: 12px 8px 12px 0px;
     border-top: solid #eee 1px;
     text-decoration: none;
-    font-size : 1rem;
+    font-size: 1rem;
     color: #000;
     display: block;
     transition: 0.3s;
 }
 
 .sidenav a.sidenav-top {
-    border-top: none;;
+    border-top: none;
+    ;
 }
 
 .sidenav a:hover {
@@ -235,31 +237,33 @@ body {
     z-index: 99;
     background: #FFFFFF;
     max-width: 300px;
+    width: 0;
     margin: 0 auto 100px;
     padding: 30px 30px 20px 30px;
     text-align: center;
     top: 85px;
     opacity: 0;
     transition: .15s;
-  }
+}
 
-  .form.login-visible {
+.form.login-visible {
     opacity: 100;
-  }
+    width: 300px;
+}
 
-@media (min-width: 1200px){
+@media (min-width: 1200px) {
     .form {
         right: 3vw;
     }
 }
 
-@media (min-width: 1900px){
+@media (min-width: 1900px) {
     .form {
         right: 3vw;
     }
 }
 
-  .form input {
+.form input {
     outline: 0;
     background: #f2f2f2;
     width: 100%;
@@ -269,8 +273,9 @@ body {
     padding: 15px;
     box-sizing: border-box;
     font-size: .8rem;
-  }
-  .form button {
+}
+
+.form button {
     text-transform: uppercase;
     outline: 0;
     width: 100%;
@@ -282,18 +287,23 @@ body {
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
-  }
-  
-  .form .message {
+}
+
+.form .message {
     margin: 15px 0 0;
     color: #b3b3b3;
     font-size: 12px;
-  }
+}
 
-  .form .message a {
+.form .message a {
     color: #343a40;
     text-decoration: none;
-  }
-  .form .register-form {
+}
+
+.form .register-form {
     display: none;
-  }
+}
+
+#btn-login {
+    cursor: pointer;
+}
