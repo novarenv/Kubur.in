@@ -22,9 +22,11 @@ AppAsset::register($this);
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
+    
     <?php $this->head() ?>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-black sidebar-mini">
 <?php $this->beginBody() ?>
 <?php
 if (!Yii::$app->user->isGuest) {
@@ -97,9 +99,33 @@ if (!Yii::$app->user->isGuest) {
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs">Admin</span>
+            <i class="fa fa-user"></i>
+              
             </a>
-            
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header" style="height: 80px;">
+                <p class="">
+                  <?= Yii::$app->user->identity->username; ?>
+                  <small>Pussy Slayer</small>
+                </p>
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <?php echo Html::beginForm(['/site/logout'], 'post')
+                      . Html::submitButton(
+                          'Logout',
+                          ['class' => 'btn btn-default btn-flat']
+                      )
+                      . Html::endForm()
+                  ?>
+                </div>
+              </li>
+            </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
           
@@ -113,51 +139,35 @@ if (!Yii::$app->user->isGuest) {
     <section class="sidebar">
       <!-- Sidebar user panel -->
       <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-          <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form>
+      
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-          </ul>
-        </li>
+        <?php
+        echo yii\widgets\Menu::widget([
+            'items' => [
+                ['label' => '<i class="fa fa-home"></i> <span>Home</span>', 'url' => ['site/index']],
+                ['label' => '<i class="fa fa-list-alt"></i> <span>Pemesanan</span>', 'url' => ['pemesanan/index']],
+                ['label' => '<i class="fa fa-users"></i> <span>User</span>', 'url' => ['user/index']],
+                
+                  
+            ],
+            'activeCssClass'=>'active',
+            'options' => [
+              'class' => 'sidebar-menu',
+              'id'=>'navbar-id',
+            ],
+            
+            'encodeLabels' => false,
+        ]);
         
-        <li>
-          <a href="pages/widgets.html">
-            <i class="fa fa-th"></i> <span>Widgets</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
-            </span>
-          </a>
-        </li>
+        ?>
         
-        
-        <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-        
-      </ul>
     </section>
     <!-- /.sidebar -->
   </aside>
   <div class="content-wrapper">
     <?= $content ?>
-</div>
+  </div>
 
 </div>
 
