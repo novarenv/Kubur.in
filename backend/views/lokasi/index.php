@@ -7,13 +7,36 @@ use yii\grid\GridView;
 /* @var $searchModel app\Models\LokasiSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Lokasis';
+$this->title = 'Lokasi';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="lokasi-index">
-
-    <div id='map' style='width: 1100px; height: 300px; margin-top : 20px;'></div>
+    <h1><?= Html::encode($this->title) ?></h1>
+    <div id='map' style='width: 1080px; height: 400px; margin-top : 20px; margin-bottom : 50px;'></div>
     
+
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'columns' => [
+
+            'id',
+            'nama',
+            'max_kuburan',
+            'min_kuburan',
+            //'id_peti',
+            //'id_status_pemesanan',
+            //'id_batu_nisan',
+            //'id_lokasi',
+            //'id_metode_pemakaman',
+            //'id_item_tbh',
+            //'id_metode_bayar',
+
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
+
 
     <script>
 
@@ -57,5 +80,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
     </script>
+    
 
 </div>

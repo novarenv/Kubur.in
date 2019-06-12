@@ -35,7 +35,7 @@ if (!Yii::$app->user->isGuest) {
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="/Kubur.in/backend/web" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>K</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -148,6 +148,7 @@ if (!Yii::$app->user->isGuest) {
                 ['label' => '<i class="fa fa-home"></i> <span>Home</span>', 'url' => ['site/index']],
                 ['label' => '<i class="fa fa-list-alt"></i> <span>Pemesanan</span>', 'url' => ['pemesanan/index']],
                 ['label' => '<i class="fa fa-users"></i> <span>User</span>', 'url' => ['user/index']],
+                ['label' => '<i class="fa fa-map-marker"></i> <span>Lokasi</span>', 'url' => ['lokasi/index']],
                 
                   
             ],

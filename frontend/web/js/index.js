@@ -17,7 +17,7 @@ function checkNav(x){
 }
 
 function showLogin(x){
-  document.getElementById("login-form").classList.toggle("login-visible");
+  document.getElementById("loginForm").classList.toggle("login-visible");
 }
 
 function toPlanner(){
@@ -36,3 +36,17 @@ $(function() {
     document.getElementById("btn-menu").classList.toggle("change");
   });
 })
+
+window.onscroll = function() {myFunction()};
+
+var formlog = document.getElementById("loginForm");
+var sticky = formlog.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky - 80) {
+    formlog.classList.add("sticky")
+  } else {
+    formlog.classList.remove("sticky");
+  }
+}
+

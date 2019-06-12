@@ -10,10 +10,14 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 use yii\helpers\Url;
+use yii\bootstrap\ActiveForm;
+use common\models\LoginForm;
+use frontend\components\LoginFormWidget;
 
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
+<?php $model = new LoginForm(); ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 
@@ -30,7 +34,7 @@ AppAsset::register($this);
 <body>
     <?php $this->beginBody() ?>
 
-    <nav class="navbar navbar-expand-lg navbar-light px-4">
+    <nav class="navbar navbar-expand-lg navbar-light px-4 sticky">
         <ul class="navbar-nav ">
             <div class="menu-btn" id="btn-menu" onclick="checkNav(this)">
                 <div class="bar1"></div>
@@ -38,25 +42,23 @@ AppAsset::register($this);
                 <div class="bar3"></div>
             </div>
         </ul>
-        <a class="navbar-brand mx-auto" href="/">Kubur.in</a>
+        <a class="navbar-brand mx-auto" href="/Kubur.in/frontend/web">Kubur.in</a>
+
         <?php
             if (Yii::$app->user->isGuest) {
                 ?>
-                <div class="form-inline">
+                <div class="form-inline ml-auto">
                     <span class="btn btn-dark" id="btn-login" onclick="showLogin(this)">Sign In</span>
                 </div>
                 <?php
             } else {
                 ?>
-                <div class="form-inline">
-                    <span class="btn btn-dark" id="btn-login" onclick="showLogin(this)">Sign In</span>
+                <div class="form-inline ml-auto">
+                    Hello, <?= Yii::$app->user->identity->username; ?>
                 </div>
                 <?php
             }
         ?>
-
-
-        
     </nav>
 
     <div id="mySidenav" class="sidenav">
@@ -66,14 +68,10 @@ AppAsset::register($this);
     </div>
 
     <?= $content ?>
-
-    <div class="form shadow-sm" id="login-form">
-        <form class="login-form">
-            <input type="text" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <button class="btn btn-dark">login</button>
-            <p class="message"><a href="#">Sign Up</a></p>
-        </form>
+    
+    <div class="form shadow-sm" id="loginForm">
+        <?= frontend\components\Login::widget(); ?>
+        
     </div>
 
     </div>
@@ -82,3 +80,10 @@ AppAsset::register($this);
 
 </html>
 <?php $this->endPage() ?>
+
+<!-- <form class="login-form">
+            <input type="text" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button class="btn btn-dark">login</button>
+            <p class="message"><a href="#">Sign Up</a></p>
+        </form> -->
