@@ -32,6 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'nama',
             'nik',
             'id_pot',
+            'harga',
             //'id_peti',
             //'id_status_pemesanan',
             //'id_batu_nisan',

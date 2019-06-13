@@ -47,16 +47,37 @@ AppAsset::register($this);
         <?php
             if (Yii::$app->user->isGuest) {
                 ?>
-                <div class="form-inline ml-auto">
-                    <span class="btn btn-dark" id="btn-login" onclick="showLogin(this)">Sign In</span>
-                </div>
-                <?php
+        <div class="form-inline ml-auto">
+            <span class="btn btn-dark" id="btn-login" onclick="showLogin(this)">Sign In</span>
+        </div>
+        <?php
             } else {
                 ?>
-                <div class="form-inline ml-auto">
-                    Hello, <?= Yii::$app->user->identity->username; ?>
+        <div class="form-inline ml-auto">
+            Hello, 
+            <div class="dropdown">
+                <a class="dropdown-toggle" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?= Yii::$app->user->identity->username; ?>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="left:-100px; font-size:.85rem;">
+                    <a class="dropdown-item text-center" href="profile">Profile</a>
+                    <a class="dropdown-item text-center" href="#"><?php 
+                    echo Html::beginForm(['/site/logout'], 'post')
+                      . Html::submitButton(
+                          'Logout',
+                          ['class' => 'btn btn-default btn-flat btn-logout'],
+                          ['style' => '
+                            padding: .25rem 1.5rem;
+                            margin-left : 20px;
+                          ']
+                      )
+                      . Html::endForm()
+                  ?></a>
                 </div>
-                <?php
+            </div>
+        </div>
+        <?php
             }
         ?>
     </nav>
@@ -69,10 +90,10 @@ AppAsset::register($this);
     </div>
 
     <?= $content ?>
-    
+
     <div class="form shadow-sm" id="loginForm">
         <?= frontend\components\Login::widget(); ?>
-        
+
     </div>
 
     </div>
