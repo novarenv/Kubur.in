@@ -11,12 +11,9 @@ $this->title = 'Kubur.in - Funeral Planner';
             <div class="row">
                 <div class="col-lg-7 text-center text-lg-left text-white">
                     <p class="mb-0 text-sm">KUBUR.IN</p>
-                    <h1 class="display-45 mt-3 mb-4">The best funeral service you could ever ask for.</h1>
-                    <p class="">We want you to feel confident and comfortable planning a funeral for yourself or a loved
-                        one.
+                    <h1 class="display-45 mt-3 mb-4">Penyedia layanan pemakaman terbaik yang dapat anda temukan</h1>
+                    <p class="">Kami ingin membuat anda merasa percaya dan nyaman dalam mengatur pemakaman untuk anda dan yang anda sayangi.
                     </p>
-                    <!-- <hr class="my-4">
-                    <a class="btn btn-dark btn-lg" href="#" role="button">Learn More</a> -->
                 </div>
                 <div class="col-lg-5">
 
@@ -31,12 +28,11 @@ $this->title = 'Kubur.in - Funeral Planner';
         <div class="row ">
             <div class="col-lg-2"></div>
             <div class="col-lg-8 text-center ">
-                <h2 class="featurette-heading">What We Do </h2>
+                <h2 class="featurette-heading">Pelayanan Kami </h2>
                 <p class="featurette-text">
-                    We organize anything about a funeral for you or your loved one such as book the cemetery ground,
-                    transporting the deceased, provide coffin, and many more.
+                    Kami mengatur segala hal mengenai pemakaman untuk anda dan yang anda sayangi seperti jasa pemesanan lahan pemakaman, mengantarkan mereka yang meninggal, dan masih banyak lagi.
                     <br>
-                    You could specify your needs for the funeral by using our planner.
+                    Anda dapat merinci kebutuhan anda melalui jasa planner kami.
                 </p>
             </div>
             <div class="col-lg-2"></div>
@@ -48,7 +44,7 @@ $this->title = 'Kubur.in - Funeral Planner';
             <div class="row ">
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8 text-center ">
-                    <h2 class="featurette-heading">The Workflow </h2>
+                    <h2 class="featurette-heading">Proses Pemesanan</h2>
 
                 </div>
                 <div class="col-lg-2"></div>
@@ -65,7 +61,7 @@ $this->title = 'Kubur.in - Funeral Planner';
                                     <div class="card-body">
                                         <h3 class="card-number">01</h3>
                                         <h5 class="card-title">Plan</h5>
-                                        <p class="card-text">Choose your funeral preferences</p>
+                                        <p class="card-text">Pilih selera pemakaman anda.</p>
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +78,7 @@ $this->title = 'Kubur.in - Funeral Planner';
                                     <div class="card-body">
                                         <h3 class="card-number">02</h3>
                                         <h5 class="card-title mt-lg-4">Payment</h5>
-                                        <p class="card-text">Jo lali mbayar bos</p>
+                                        <p class="card-text">Anda dapat membayar dengan beberapa pilihan pembayaran.</p>
                                     </div>
                                 </div>
                             </div>
@@ -124,7 +120,7 @@ $this->title = 'Kubur.in - Funeral Planner';
                 <a href="#" >Back to top</a>
             </p>
             <p style="font-family: 'Stolzl-Medium'; font-size: 1.5rem;">Kubur.in</p>
-            <p class="text-muted" style="font-family: 'Stolzl-Light';">The best funeral service you could ever ask for.</p>
+            <p class="text-muted" style="font-family: 'Stolzl-Light';">Penyedia layanan pemakaman terbaik yang dapat anda temukan.</p>
         </div>
     </footer>
 

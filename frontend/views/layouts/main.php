@@ -63,8 +63,9 @@ AppAsset::register($this);
 
     <div id="mySidenav" class="sidenav">
         <a href="planner" class="sidenav-top">Planner</a>
-        <a href="services">Services</a>
-        <a href="about">About</a>
+        <a href="services">Pelayanan</a>
+        <a href="ziarah">Ziarah</a>
+        <a href="about">Tentang Kami</a>
     </div>
 
     <?= $content ?>

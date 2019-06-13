@@ -150,6 +150,10 @@ class SiteController extends Controller
         return $this->render('services');
     }
 
+    public function actionZiarah(){
+        return $this->render('ziarah');
+    }
+
     public function actionAbout()
     {
         return $this->render('about');
