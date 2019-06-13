@@ -11,7 +11,7 @@ use Yii;
  * @property string $nama
  * @property double $harga
  *
- * @property Pemesanan $id0
+ * @property Pemesanan[] $pemesanans
  */
 class ItemTambahan extends \yii\db\ActiveRecord
 {
@@ -32,7 +32,6 @@ class ItemTambahan extends \yii\db\ActiveRecord
             [['nama', 'harga'], 'required'],
             [['harga'], 'number'],
             [['nama'], 'string', 'max' => 100],
-            [['id'], 'exist', 'skipOnError' => true, 'targetClass' => Pemesanan::className(), 'targetAttribute' => ['id' => 'id_item_tbh']],
         ];
     }
 
@@ -51,8 +50,8 @@ class ItemTambahan extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getId0()
+    public function getPemesanans()
     {
-        return $this->hasOne(Pemesanan::className(), ['id_item_tbh' => 'id']);
+        return $this->hasMany(Pemesanan::className(), ['id_item_tbh' => 'id']);
     }
 }

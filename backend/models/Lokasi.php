@@ -14,7 +14,7 @@ use Yii;
  * @property int $now_kuburan
  * @property int $id_kecamatan
  *
- * @property Pemesanan $id0
+ * @property Pemesanan[] $pemesanans
  */
 class Lokasi extends \yii\db\ActiveRecord
 {
@@ -37,7 +37,6 @@ class Lokasi extends \yii\db\ActiveRecord
             [['max_kuburan', 'now_kuburan', 'id_kecamatan'], 'integer'],
             [['nama'], 'string', 'max' => 100],
             [['id_kecamatan'], 'unique'],
-            [['id'], 'exist', 'skipOnError' => true, 'targetClass' => Pemesanan::className(), 'targetAttribute' => ['id' => 'id_lokasi']],
         ];
     }
 
@@ -59,8 +58,8 @@ class Lokasi extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getId0()
+    public function getPemesanans()
     {
-        return $this->hasOne(Pemesanan::className(), ['id_lokasi' => 'id']);
+        return $this->hasMany(Pemesanan::className(), ['id_lokasi' => 'id']);
     }
 }

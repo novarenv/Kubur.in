@@ -10,7 +10,7 @@ use Yii;
  * @property int $id
  * @property string $nama
  *
- * @property Pemesanan $id0
+ * @property Pemesanan[] $pemesanans
  */
 class MetodePemakaman extends \yii\db\ActiveRecord
 {
@@ -30,7 +30,6 @@ class MetodePemakaman extends \yii\db\ActiveRecord
         return [
             [['nama'], 'required'],
             [['nama'], 'string', 'max' => 100],
-            [['id'], 'exist', 'skipOnError' => true, 'targetClass' => Pemesanan::className(), 'targetAttribute' => ['id' => 'id_metode_pemakaman']],
         ];
     }
 
@@ -48,8 +47,8 @@ class MetodePemakaman extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getId0()
+    public function getPemesanans()
     {
-        return $this->hasOne(Pemesanan::className(), ['id_metode_pemakaman' => 'id']);
+        return $this->hasMany(Pemesanan::className(), ['id_metode_pemakaman' => 'id']);
     }
 }

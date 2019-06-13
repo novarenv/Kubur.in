@@ -19,7 +19,7 @@ use Yii;
  * @property int $created_at
  * @property int $updated_at
  *
- * @property Pemesanan $pemesanan
+ * @property Pemesanan[] $pemesanans
  */
 class User extends \yii\db\ActiveRecord
 {
@@ -68,18 +68,8 @@ class User extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getPemesanan()
+    public function getPemesanans()
     {
-        return $this->hasOne(Pemesanan::className(), ['id' => 'id']);
-    }
-
-    public function getUsername()
-    {
-        return \Yii::$app->user->identity->username;
-    }
-
-    public function getName()
-    {
-        return \Yii::$app->user->identity->name;
+        return $this->hasMany(Pemesanan::className(), ['id_user' => 'id']);
     }
 }

@@ -11,7 +11,7 @@ use Yii;
  * @property string $nama
  * @property int $range_pembayaran
  *
- * @property Pemesanan $id0
+ * @property Pemesanan[] $pemesanans
  */
 class MetodePembayaran extends \yii\db\ActiveRecord
 {
@@ -32,7 +32,6 @@ class MetodePembayaran extends \yii\db\ActiveRecord
             [['nama', 'range_pembayaran'], 'required'],
             [['range_pembayaran'], 'integer'],
             [['nama'], 'string', 'max' => 100],
-            [['id'], 'exist', 'skipOnError' => true, 'targetClass' => Pemesanan::className(), 'targetAttribute' => ['id' => 'id_metode_bayar']],
         ];
     }
 
@@ -51,8 +50,8 @@ class MetodePembayaran extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getId0()
+    public function getPemesanans()
     {
-        return $this->hasOne(Pemesanan::className(), ['id_metode_bayar' => 'id']);
+        return $this->hasMany(Pemesanan::className(), ['id_metode_bayar' => 'id']);
     }
 }
