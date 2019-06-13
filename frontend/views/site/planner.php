@@ -31,16 +31,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     ['prompt'=>'Select Category']
                 ); ?>
                 <?php echo $form->field($model, 'id_user')->hiddenInput(['value'=> Yii::$app->user->identity->id])->label(false); ?>
+                <?php $model->save()?>
                 <div class="form-group">
                     <?= Html::submitButton('Next', ['class' => 'btn btn-dark']) ?>
                 </div>
                 <?php ActiveForm::end(); ?>
-              
-
-                
-                
-
-
                 
                 <!-- <select class="custom-select" id="inputGroupSelect01">
                     <?php 

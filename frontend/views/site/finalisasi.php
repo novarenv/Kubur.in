@@ -53,16 +53,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 NIK : <?= $model->nik ?> <br>
                 Metode : <?= $metode['nama'] ?> <br>
 
-            
-            
-
-
                 <?php if($model['id_metode_pemakaman'] == 1) { $harga += 500000;?>
                     Lokasi : <?= $lokasi['nama'] ?> <br>
                     Peti : <?= $peti['bahan_baku'] ?>, <?= $peti['harga'] ?> <br>
                     Batu Nisan : <?= $batu['nama'] ?>, <?= $batu['harga'] ?> <br>
-                    
-
                 
                 <?php } else if($model['id_metode_pemakaman'] == 2) { $harga += 200000;?>
                     Lokasi : <?= $lokasi['nama'] ?> <br>
@@ -87,6 +81,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     if($bayar['id'] == 5)
                         echo 'Datang ke kantor kami di Jl. Pegangsaan Timur 48';
                 ?>
+
+                <?php echo $form->field($model, 'harga')->hiddenInput(['value'=> $harga])->label(false); ?>
+                
                 </p>
                 <a href="index"><button class="btn btn-dark">Kembali Ke Beranda</button></a>
 
