@@ -57,5 +57,18 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <script>
 
+                <?php echo $form->field($model, 'id_metode_pemakaman')->dropdownList([
+                        1 => 'Peti (500000)', 
+                        2 => 'Kafan (200000)',
+                        3 => 'Kremasi (3000000)'
+                    ],
+                    ['prompt'=>'Select Category']
+                ); ?>
+                <?php echo $form->field($model, 'id_user')->hiddenInput(['value'=> Yii::$app->user->identity->id])->label(false); ?>
+                <div class="form-group">
+                    <?= Html::submitButton('Next', ['class' => 'btn btn-dark']) ?>
+                </div>
+                <?php ActiveForm::end(); ?>
+              
 
 </script>
