@@ -19,6 +19,7 @@ use Yii;
  * @property int $id_metode_pemakaman
  * @property int $id_item_tbh
  * @property int $id_metode_bayar
+ * @property double $harga
  *
  * @property StatusPemesanan $statusPemesanan
  * @property Lokasi $lokasi
@@ -46,8 +47,9 @@ class Pemesanan extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_user', 'nama', 'nik'], 'required'],
+            [['id_user', 'harga'], 'required'],
             [['id_user', 'nik', 'id_pot', 'id_peti', 'id_status_pemesanan', 'id_batu_nisan', 'id_lokasi', 'id_metode_pemakaman', 'id_item_tbh', 'id_metode_bayar'], 'integer'],
+            [['harga'], 'number'],
             [['nama'], 'string', 'max' => 100],
             [['id_status_pemesanan'], 'exist', 'skipOnError' => true, 'targetClass' => StatusPemesanan::className(), 'targetAttribute' => ['id_status_pemesanan' => 'id']],
             [['id_lokasi'], 'exist', 'skipOnError' => true, 'targetClass' => Lokasi::className(), 'targetAttribute' => ['id_lokasi' => 'id']],
@@ -79,6 +81,7 @@ class Pemesanan extends \yii\db\ActiveRecord
             'id_metode_pemakaman' => 'Id Metode Pemakaman',
             'id_item_tbh' => 'Id Item Tbh',
             'id_metode_bayar' => 'Id Metode Bayar',
+            'harga' => 'Harga',
         ];
     }
 
