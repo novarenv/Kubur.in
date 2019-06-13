@@ -4,6 +4,7 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\widgets\ActiveForm;
 
 if ( Yii::$app->user->isGuest )
     return Yii::$app->getResponse()->redirect('login');
@@ -12,12 +13,62 @@ $this->title = 'Planner';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-about">
-    
-    <div class="startpage">
-        <h1><?= Html::encode($this->title) ?></h1>
 
-        <p>This is the About page. You may modify the following file to customize its content:</p>
+    <div class="startpage" style="padding-top: 20px;">
+    <div class="row">
+            <div class="col-1 col-lg-4"></div>
+            <div class="col-10 col-lg-4 text-center">
+                <h1><?= Html::encode($this->title) ?></h1>
 
-        <code><?= __FILE__ ?></code>
+                <p class="mt-5"></p>
+                <?php $form = ActiveForm::begin(['action' => ['site/planner'], 'options' => ['method' => 'post']]); ?>
+
+                <?php echo $form->field($model, 'id_metode_pemakaman')->dropdownList([
+                        1 => 'Peti (500000)', 
+                        2 => 'Kafan (200000)',
+                        3 => 'Kremasi (3000000)'
+                    ],
+                    ['prompt'=>'Select Category']
+                ); ?>
+                <?php echo $form->field($model, 'id_user')->hiddenInput(['value'=> Yii::$app->user->identity->id])->label(false); ?>
+                <?php $model->save()?>
+                <div class="form-group">
+                    <?= Html::submitButton('Next', ['class' => 'btn btn-dark']) ?>
+                </div>
+                <?php ActiveForm::end(); ?>
+                
+                <!-- <select class="custom-select" id="inputGroupSelect01">
+                    <?php 
+                    foreach ($dataProvider->models as $model) {
+                    ?>
+                    <option <?php if($model->id == 1) echo'selected' ?> value="<?=$model->id; ?>"><?= $model->nama ?></option>
+                    <?php 
+                    }
+                    ?>
+                </select>
+                <input class="btn btn-dark mt-3" type="submit" > -->
+            </div>
+            <div class="col-1 col-lg-4"></div>
+
+        </div>
+        
     </div>
 </div>
+
+<script>
+
+                <?php echo $form->field($model, 'id_metode_pemakaman')->dropdownList([
+                        1 => 'Peti (500000)', 
+                        2 => 'Kafan (200000)',
+                        3 => 'Kremasi (3000000)'
+                    ],
+                    ['prompt'=>'Select Category']
+                ); ?>
+                <?php echo $form->field($model, 'id_user')->hiddenInput(['value'=> Yii::$app->user->identity->id])->label(false); ?>
+                <div class="form-group">
+                    <?= Html::submitButton('Next', ['class' => 'btn btn-dark']) ?>
+                </div>
+                <?php ActiveForm::end(); ?>
+              
+
+</script>

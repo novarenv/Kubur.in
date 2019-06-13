@@ -14,6 +14,11 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use app\models\MetodePemakaman;
+use app\models\MetodePemakamanSearch;
+use app\models\Pemesanan;
+use app\models\PemesananSearch;
+use yii\db\Query;
 
 /**
  * Site controller
@@ -142,7 +147,76 @@ class SiteController extends Controller
      */
     public function actionPlanner()
     {
-        return $this->render('planner');
+
+        $searchModel = new MetodePemakamanSearch();
+        $model = new Pemesanan();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['saveplanner', 'id' => $model->id]);
+        }
+
+        return $this->render('planner', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'model' => $model
+        ]);
+    }
+
+    public function actionSaveplanner($id)
+    {
+        $model = $this->findModel($id);
+        
+        $mid = new Query();
+        $mid->select(['id_metode_pemakaman', 'id_user'])->from('pemesanan');
+        $mid->where(['id' => $id]);
+        $mid->one();
+        $command = $mid->createCommand();
+        $data = $command->queryAll();
+
+        $name = new Query();
+        $name->select(['nama'])->from('metode_pemakaman');
+        $name->where(['id' => $data[0]['id_metode_pemakaman']]);
+        $name->all();
+        $command2 = $name->createCommand();
+        $data2 = $command2->queryAll();
+
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['finalisasi', 'id' => $id]);
+        }
+
+        return $this->render('planner-form', [
+            'model' => $model,
+            'id' => $id,
+            'data' => $data,
+            'data2' => $data2,
+        ]);
+    }
+
+    public function actionFinalisasi($id){
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect('profile');
+        }
+
+        return $this->render('finalisasi', [
+            'model' => $model,
+            'id' => $id
+        ]);
+    }
+
+    public function actionProfile()
+    {
+        $searchModel = new PemesananSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $id = Yii::$app->user->identity->id;
+        $dataProvider->query->andWhere(['id_user'=> $id]);
+        return $this->render('profile', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     public function actionServices()
@@ -270,5 +344,14 @@ class SiteController extends Controller
         return $this->render('resendVerificationEmail', [
             'model' => $model
         ]);
+    }
+
+    protected function findModel($id)
+    {
+        if (($model = Pemesanan::findOne($id)) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }
