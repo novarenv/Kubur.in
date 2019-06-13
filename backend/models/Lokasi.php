@@ -36,7 +36,7 @@ class Lokasi extends \yii\db\ActiveRecord
             [['ukuran'], 'number'],
             [['max_kuburan', 'now_kuburan', 'id_kecamatan'], 'integer'],
             [['nama'], 'string', 'max' => 100],
-            [['id_kecamatan'], 'unique'],
+            [['id_kecamatan'], 'required'],
         ];
     }
 

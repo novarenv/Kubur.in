@@ -31,7 +31,7 @@ class Pot extends \yii\db\ActiveRecord
     {
         return [
             [['nama', 'harga', 'bahan_baku'], 'required'],
-            [['nama'], 'integer'],
+            [['nama'], 'string', 'max' => 100],
             [['harga'], 'number'],
             [['bahan_baku'], 'string', 'max' => 100],
         ];

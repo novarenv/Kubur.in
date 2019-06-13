@@ -17,6 +17,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
+    <p>
+        <?= Html::a('Create Lokasi', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
@@ -24,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'nama',
             'max_kuburan',
-            'min_kuburan',
+            'now_kuburan',
             //'id_peti',
             //'id_status_pemesanan',
             //'id_batu_nisan',

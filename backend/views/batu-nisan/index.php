@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\BatuNisanSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Batu Nisans';
+$this->title = 'Batu Nisan';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="batu-nisan-index">

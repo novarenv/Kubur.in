@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\PotSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Pots';
+$this->title = 'Pot';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pot-index">

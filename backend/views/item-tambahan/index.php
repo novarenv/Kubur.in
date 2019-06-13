@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\ItemTambahanSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Item Tambahans';
+$this->title = 'Item Tambahan';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="item-tambahan-index">

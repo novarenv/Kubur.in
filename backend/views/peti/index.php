@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\PetiSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Petis';
+$this->title = 'Peti';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="peti-index">

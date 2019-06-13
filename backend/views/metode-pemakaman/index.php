@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\MetodePemakamanSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Metode Pemakamen';
+$this->title = 'Metode Pemakaman';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="metode-pemakaman-index">
