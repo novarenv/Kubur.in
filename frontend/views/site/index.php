@@ -75,14 +75,14 @@ $this->title = 'Kubur.in - Funeral Planner';
                     <div class="col-lg-6">
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="card bg-white mb-3 card-btn planner">
+                                <div class="card bg-white mb-3 card-btn ">
                                     <div class="card-btn-img">
                                         <img class="img-fluid btn-img-tomb" alt="Responsive image">
                                     </div>
                                     <div class="card-body">
                                         <h3 class="card-number">02</h3>
                                         <h5 class="card-title mt-lg-4">Payment</h5>
-                                        <p class="card-text">Don't worry, our service is very affordable!</p>
+                                        <p class="card-text">Jo lali mbayar bos</p>
                                     </div>
                                 </div>
                             </div>
@@ -100,7 +100,7 @@ $this->title = 'Kubur.in - Funeral Planner';
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <div class="card bg-dark mb-3 card-btn" onclick="toPlanner()">
+                                <div class="card bg-dark mb-3 card-btn planner" onclick="toPlanner()">
                                     <div class="card-body">
                                         <h3 class="card-number">>>></h3>
                                         <h5 class="card-title mt-5 text-white">Start Planning</h5>
@@ -118,14 +118,13 @@ $this->title = 'Kubur.in - Funeral Planner';
         <hr class="featurette-divider">
     </div>
 
-    <footer class="text-muted">
+    <footer >
         <div class="container mx-lg-5 px-lg-5">
             <p class="float-right">
-                <a href="#">Back to top</a>
+                <a href="#" >Back to top</a>
             </p>
-            <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
-            <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a
-                    href="/docs/4.3/getting-started/introduction/">getting started guide</a>.</p>
+            <p style="font-family: 'Stolzl-Medium'; font-size: 1.5rem;">Kubur.in</p>
+            <p class="text-muted" style="font-family: 'Stolzl-Light';">The best funeral service you could ever ask for.</p>
         </div>
     </footer>
 

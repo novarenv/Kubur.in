@@ -149,6 +149,15 @@ if (!Yii::$app->user->isGuest) {
                 ['label' => '<i class="fa fa-list-alt"></i> <span>Pemesanan</span>', 'url' => ['pemesanan/index']],
                 ['label' => '<i class="fa fa-users"></i> <span>User</span>', 'url' => ['user/index']],
                 ['label' => '<i class="fa fa-map-marker"></i> <span>Lokasi</span>', 'url' => ['lokasi/index']],
+                ['label' => '<hr style="margin:0; border-color:#888;">'],
+                ['label' => '<i class="fa fa-cross"></i> <span>Batu Nisan</span>', 'url' => ['batu-nisan/index']],
+                ['label' => '<i class="fa fa-plus-square"></i> <span>Item Tambahan</span>', 'url' => ['item-tambahan/index']],
+                ['label' => '<i class="fa fa-globe-asia"></i> <span>Kecamatan</span>', 'url' => ['kecamatan/index']],
+                ['label' => '<i class="fa fa-procedures"></i> <span>Metode Pemakaman</span>', 'url' => ['metode-pemakaman/index']],
+                ['label' => '<i class="fa fa-money-bill-wave"></i> <span>Metode Pembayaran</span>', 'url' => ['metode-pembayaran/index']],
+                ['label' => '<i class="fa fa-suitcase"></i> <span>Peti</span>', 'url' => ['peti/index']],
+                ['label' => '<i class="fa fa-fill"></i> <span>Pot</span>', 'url' => ['pot/index']],
+                ['label' => '<i class="fa fa-question-circle"></i> <span>Status Pemesanan</span>', 'url' => ['status-pemesanan/index']],
                 
                   
             ],

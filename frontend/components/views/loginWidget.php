@@ -24,4 +24,4 @@ use yii\helpers\Html;
     
         <?= Html::submitButton('Login', ['class' => 'btn btn-dark', 'name' => 'login-button']) ?>
 <?php ActiveForm::end(); ?>
-<p class="message"><a href="#">Sign Up</a></p>
+<p class="message"><a href="signup">Sign Up</a></p>

@@ -18,7 +18,7 @@ html, body {
     z-index: 99;
     height: 80px;
     border-bottom: solid 2px rgb(213, 214, 214);
-    background-color: #ECEBEB;
+    background-color: rgb(245, 245, 245);
     overflow: hidden;
 }
 
@@ -102,6 +102,10 @@ html, body {
 .card-btn {
     height: 150px;
     overflow: hidden;
+}
+
+.card-btn.planner {
+    
     cursor: pointer;
 }
 
@@ -109,7 +113,6 @@ html, body {
     .card-jumbo {
         height: 316px;
         overflow: hidden;
-        cursor: pointer;
     }
 
     .card-jumbo .card-title {
@@ -403,12 +406,14 @@ html, body {
   }
   
   .featurette-heading {
-    font-family: 'Stolzl-Medium';
+    font-family: 'Stolzl';
     margin-bottom: 20px;
   }
 
   .featurette-text {
     font-size : 1rem;
+    font-family: 'Stolzl-Light';
+    letter-spacing: 0.05em;
   }
   
   footer {

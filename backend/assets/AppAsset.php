@@ -40,6 +40,7 @@ class AppAsset extends AssetBundle
         "bower_components/jquery-slimscroll/jquery.slimscroll.min.js",
         "bower_components/fastclick/lib/fastclick.js",
         "dist/js/adminlte.min.js",
+        "https://kit.fontawesome.com/070a3e4a04.js"
     ];
     public $depends = [
         'yii\web\YiiAsset',
