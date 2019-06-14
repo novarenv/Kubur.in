@@ -28,8 +28,7 @@ class MetodePemakaman extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id'], 'required'],
-            [['id'], 'number'],
+            [['nama'], 'required'],
             [['nama'], 'string', 'max' => 100],
         ];
     }
