@@ -16,6 +16,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="startpage">
         <br><br>
         <h1>Keperluan <?= Html::encode($this->title) ?></h1>
-        <a class="paragraf">Temukan kebutuhan ziarahmu untuk orang yang kamu saya ngi</a><br>
+        <a class="paragraf">Temukan kebutuhan ziarahmu untuk orang yang kamu sayangi</a><br>
     </div>
 </div>

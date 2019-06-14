@@ -80,9 +80,13 @@ $this->params['breadcrumbs'][] = $this->title;
                         echo 'Transfer ke rekening BRI : 30001293019238 a/n Sir John Kotelawala';
                     if($bayar['id'] == 5)
                         echo 'Datang ke kantor kami di Jl. Pegangsaan Timur 48';
-                ?>
 
-                <?php echo $form->field($model, 'harga')->hiddenInput(['value'=> $harga])->label(false); ?>
+
+                    $connection = Yii::$app->db;
+                    $connection->createCommand()->update('pemesanan', ['harga' => $harga], 'id ='. $id)->execute();
+
+                ?>
+                
                 
                 </p>
                 <a href="index"><button class="btn btn-dark">Kembali Ke Beranda</button></a>

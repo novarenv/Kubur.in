@@ -39,7 +39,7 @@ class MetodePemakaman extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_metode_pemakaman' => 'Id',
+            'id' => 'ID',
             'nama' => 'Nama',
         ];
     }

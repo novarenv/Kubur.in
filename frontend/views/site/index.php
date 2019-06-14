@@ -73,7 +73,7 @@ $this->title = 'Kubur.in - Funeral Planner';
                             <div class="col-lg-12">
                                 <div class="card bg-white mb-3 card-btn ">
                                     <div class="card-btn-img">
-                                        <img class="img-fluid btn-img-tomb" alt="Responsive image">
+                                        <img class="img-fluid btn-img-payment" alt="Responsive image">
                                     </div>
                                     <div class="card-body">
                                         <h3 class="card-number">02</h3>

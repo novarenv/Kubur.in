@@ -10,6 +10,7 @@ use app\models\BatuNisan;
 use app\models\ItemTambahan;
 use app\models\Kecamatan;
 use app\models\Lokasi;
+use app\models\MetodePemakaman;
 use app\models\MetodePembayaran;
 use app\models\Peti;
 use app\models\Pot;
@@ -22,6 +23,7 @@ if ( $data[0]['id_user'] != Yii::$app->user->identity->id)
 
 $this->title = 'Planner';
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="site-about">
 
@@ -87,11 +89,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         ['prompt'=>'Metode Pembayaran']
                 ); ?>
 
-                <?php echo $form->field($model, 'harga')->dropdownList(
-                        ArrayHelper::map(Pemesanan::find()->all(), 'id', 'harga'),
-                        ['prompt'=>'Harga']
-                ); ?>
-                
+            
+                <?php echo $form->field($model, 'harga')->hiddenInput(['value'=> 1])->label(false); ?>
                 <?php echo $form->field($model, 'id_status_pemesanan')->hiddenInput(['value'=> 1])->label(false); ?>
                 <div class="form-group">
                     <?= Html::submitButton('Next', ['class' => 'btn btn-dark']) ?>

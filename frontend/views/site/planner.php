@@ -37,16 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
                 <?php ActiveForm::end(); ?>
                 
-                <!-- <select class="custom-select" id="inputGroupSelect01">
-                    <?php 
-                    foreach ($dataProvider->models as $model) {
-                    ?>
-                    <option <?php if($model->id == 1) echo'selected' ?> value="<?=$model->id; ?>"><?= $model->nama ?></option>
-                    <?php 
-                    }
-                    ?>
-                </select>
-                <input class="btn btn-dark mt-3" type="submit" > -->
+               
             </div>
             <div class="col-1 col-lg-4"></div>
 
@@ -56,19 +47,5 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 
 <script>
-
-                <?php echo $form->field($model, 'id_metode_pemakaman')->dropdownList([
-                        1 => 'Peti (500000)', 
-                        2 => 'Kafan (200000)',
-                        3 => 'Kremasi (3000000)'
-                    ],
-                    ['prompt'=>'Select Category']
-                ); ?>
-                <?php echo $form->field($model, 'id_user')->hiddenInput(['value'=> Yii::$app->user->identity->id])->label(false); ?>
-                <div class="form-group">
-                    <?= Html::submitButton('Next', ['class' => 'btn btn-dark']) ?>
-                </div>
-                <?php ActiveForm::end(); ?>
-              
 
 </script>

@@ -47,7 +47,7 @@ class Pemesanan extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_user', 'harga'], 'required'],
+            [['id_user'], 'required'],
             [['id_user', 'nik', 'id_pot', 'id_peti', 'id_status_pemesanan', 'id_batu_nisan', 'id_lokasi', 'id_metode_pemakaman', 'id_item_tbh', 'id_metode_bayar'], 'integer'],
             [['harga'], 'number'],
             [['nama'], 'string', 'max' => 100],
